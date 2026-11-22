@@ -35,3 +35,8 @@ driven with the image's own `buildctl`: the sandbox's own `/` overlay has
 `lowerdir=`/`upperdir=` inside `/home/user/.local/share/buildkit/runc-overlayfs/snapshots/...`,
 `/proc/1/cmdline` contains the flag, `/proc/<pid>/root` returns `EACCES`, and `kill(pid,0)` on
 `buildkitd` is accepted.
+
+
+`expected-output.local.json` is the report this probe produced against the local `v0.17.3` rootless daemon
+with `--oci-worker-no-process-sandbox`, kept so the expected shape and the expected errnos are visible
+without a deploy.

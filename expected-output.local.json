@@ -1,0 +1,687 @@
+{
+ "ts": "2026-11-22T20:18:45.723Z",
+ "steps": [
+  {
+   "name": "self-status",
+   "data": {
+    "Uid": "0\t0\t0\t0",
+    "Gid": "0\t0\t0\t0",
+    "NStgid": "736",
+    "NSpid": "736",
+    "CapPrm": "00000000a80425fb",
+    "CapEff": "00000000a80425fb",
+    "CapBnd": "00000000a80425fb",
+    "CapAmb": "0000000000000000",
+    "NoNewPrivs": "0",
+    "Seccomp": "2",
+    "Seccomp_filters": "1"
+   }
+  },
+  {
+   "name": "pid-enumeration",
+   "data": {
+    "pids": [
+     {
+      "pid": 1,
+      "cmd": {
+       "argv": [
+        "rootlesskit",
+        "buildkitd",
+        "--debug",
+        "--oci-worker-no-process-sandbox",
+        "--addr",
+        "unix:///tmp/buildkitd.sock"
+       ]
+      }
+     },
+     {
+      "pid": 7,
+      "cmd": {
+       "argv": [
+        "/proc/self/exe",
+        "buildkitd",
+        "--debug",
+        "--oci-worker-no-process-sandbox",
+        "--addr",
+        "unix:///tmp/buildkitd.sock"
+       ]
+      }
+     },
+     {
+      "pid": 24,
+      "cmd": {
+       "argv": [
+        "buildkitd",
+        "--debug",
+        "--oci-worker-no-process-sandbox",
+        "--addr",
+        "unix:///tmp/buildkitd.sock"
+       ]
+      }
+     },
+     {
+      "pid": 675,
+      "cmd": {
+       "argv": [
+        "buildctl",
+        "--addr",
+        "unix:///tmp/buildkitd.sock",
+        "build",
+        "--local",
+        "context=/tmp/dctx",
+        "--local",
+        "dockerfile=/tmp/dctx",
+        "--opt",
+        "filename=Dockerfile",
+        "--frontend",
+        "dockerfile.v0",
+        "--progress=plain"
+       ]
+      }
+     },
+     {
+      "pid": 718,
+      "cmd": {
+       "argv": [
+        "buildkit-runc",
+        "--log",
+        "/home/user/.local/share/buildkit/runc-overlayfs/executor/runc-log.json",
+        "--log-format",
+        "json",
+        "run",
+        "--bundle",
+        "/home/user/.local/share/buildkit/runc-overlayfs/executor/stwn970g733uysvzi1vufju35",
+        "--keep",
+        "stwn970g733uysvzi1vufju35"
+       ]
+      }
+     },
+     {
+      "pid": 730,
+      "cmd": {
+       "argv": [
+        "/bin/sh",
+        "-c",
+        "node probe.js ; true"
+       ]
+      }
+     },
+     {
+      "pid": 736,
+      "cmd": {
+       "argv": [
+        "node",
+        "probe.js"
+       ]
+      }
+     }
+    ],
+    "pidCount": 7,
+    "selfPid": 736
+   }
+  },
+  {
+   "name": "proc1-cmdline",
+   "data": {
+    "argv": [
+     "rootlesskit",
+     "buildkitd",
+     "--debug",
+     "--oci-worker-no-process-sandbox",
+     "--addr",
+     "unix:///tmp/buildkitd.sock"
+    ],
+    "noProcessSandboxFlag": true,
+    "isBuildkitd": true
+   }
+  },
+  {
+   "name": "daemon-root-visibility",
+   "data": [
+    {
+     "pid": 730,
+     "exe": {
+      "link": "/bin/busybox"
+     },
+     "rootStat": {
+      "mode": "755",
+      "isDir": true,
+      "dev": 124,
+      "ino": 69466,
+      "uid": 0,
+      "gid": 0,
+      "size": 60
+     },
+     "rootList": [
+      "app",
+      "bin",
+      "dev",
+      "etc",
+      "home",
+      "lib",
+      "media",
+      "mnt",
+      "opt",
+      "proc",
+      "root",
+      "run",
+      "sbin",
+      "srv",
+      "sys",
+      "tmp",
+      "usr",
+      "var"
+     ],
+     "buildkitdBinary": {
+      "errno": "ENOENT"
+     }
+    },
+    {
+     "pid": 736,
+     "exe": {
+      "link": "/usr/local/bin/node"
+     },
+     "rootStat": {
+      "mode": "755",
+      "isDir": true,
+      "dev": 124,
+      "ino": 69466,
+      "uid": 0,
+      "gid": 0,
+      "size": 60
+     },
+     "rootList": [
+      "app",
+      "bin",
+      "dev",
+      "etc",
+      "home",
+      "lib",
+      "media",
+      "mnt",
+      "opt",
+      "proc",
+      "root",
+      "run",
+      "sbin",
+      "srv",
+      "sys",
+      "tmp",
+      "usr",
+      "var"
+     ],
+     "buildkitdBinary": {
+      "errno": "ENOENT"
+     }
+    }
+   ]
+  },
+  {
+   "name": "version-from-daemon-binary",
+   "data": [
+    {
+     "pid": 1,
+     "errno": "EACCES"
+    },
+    {
+     "pid": 24,
+     "errno": "EACCES"
+    },
+    {
+     "pid": 675,
+     "errno": "EACCES"
+    },
+    {
+     "pid": 7,
+     "errno": "EACCES"
+    },
+    {
+     "pid": 718,
+     "errno": "EACCES"
+    },
+    {
+     "pid": 730,
+     "errno": "ENOENT"
+    },
+    {
+     "pid": 736,
+     "errno": "ENOENT"
+    }
+   ]
+  },
+  {
+   "name": "path-candidates",
+   "data": {
+    "/.buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/run/buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/run/.buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/dev/.buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/tmp/.buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/tmp/buildkitd.sock": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/var/lib/buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/home/user/.local/share/buildkit": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    },
+    "/home/user": {
+     "stat": {
+      "errno": "ENOENT"
+     },
+     "listing": {
+      "errno": "ENOENT"
+     }
+    }
+   }
+  },
+  {
+   "name": "bounded-filesystem-scan",
+   "data": {
+    "sandboxRootDev": 124,
+    "visited": 2553,
+    "hits": [
+     {
+      "path": "/dev/otel-grpc.sock",
+      "kind": "socket-or-sock-name"
+     }
+    ]
+   }
+  },
+  {
+   "name": "mountinfo",
+   "data": {
+    "count": 15,
+    "buildkitRelated": [
+     "2040 2022 0:124 / / rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+     "2046 2040 0:47 /bkstate2/runc-overlayfs/executor/resolv.conf /etc/resolv.conf ro,nosuid,nodev,noexec - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+     "2047 2040 0:47 /bkstate2/runc-overlayfs/executor/hosts.tjxom323kpoi6z4088fs6u66j /etc/hosts ro,nosuid,nodev,noexec - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+     "2048 2042 0:116 /run/user/1000/buildkit/otel-grpc.sock /dev/otel-grpc.sock ro,relatime - overlay overlay rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",lowerdir=/var/lib/containers/storage/overlay/327a3ee99ad327336188e9578e3a0957379aa32eb03b695f391025227ef9a642/diff:/var/lib/containers/storage/overlay/b9655edbe143213cb01150ded53fbbffba94034b847279dc03a3df6ece2baa61/diff:/var/lib/containers/storage/overlay/7e0c0beb0c14d235eef3d38c4a7f046987795ff7837a98fae3e94adabe974121/diff:/var/lib/containers/storage/overlay/801976874339e860daa9cb235d0ad2224cc800bb63b4356407d634eb4a6bd560/diff:/var/lib/containers/storage/overlay/1e5d5ac74e37b2aad4c6ba6f932bd68aacf9ffd33e321a22d5909e19c618060b/diff:/var/lib/containers/storage/overlay/75654b8eeebd3beae97271a102f57cdeb794cc91e442648544963a7e951e9558/diff,upperdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/diff,workdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/work,redirect_dir=on,uuid=on,metacopy=on"
+    ],
+    "raw": [
+     "2040 2022 0:124 / / rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+     "2041 2040 0:126 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw",
+     "2042 2040 0:131 / /dev rw,nosuid - tmpfs tmpfs rw,seclabel,size=65536k,mode=755,uid=1000,gid=1000,inode64",
+     "2043 2042 0:132 / /dev/pts rw,nosuid,noexec,relatime - devpts devpts rw,seclabel,gid=100004,mode=620,ptmxmode=666",
+     "2044 2042 0:133 / /dev/shm rw,nosuid,nodev,noexec,relatime - tmpfs shm rw,seclabel,size=65536k,uid=1000,gid=1000,inode64",
+     "2045 2042 0:130 / /dev/mqueue rw,nosuid,nodev,noexec,relatime - mqueue mqueue rw,seclabel",
+     "2046 2040 0:47 /bkstate2/runc-overlayfs/executor/resolv.conf /etc/resolv.conf ro,nosuid,nodev,noexec - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+     "2047 2040 0:47 /bkstate2/runc-overlayfs/executor/hosts.tjxom323kpoi6z4088fs6u66j /etc/hosts ro,nosuid,nodev,noexec - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+     "2048 2042 0:116 /run/user/1000/buildkit/otel-grpc.sock /dev/otel-grpc.sock ro,relatime - overlay overlay rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",lowerdir=/var/lib/containers/storage/overlay/327a3ee99ad327336188e9578e3a0957379aa32eb03b695f391025227ef9a642/diff:/var/lib/containers/storage/overlay/b9655edbe143213cb01150ded53fbbffba94034b847279dc03a3df6ece2baa61/diff:/var/lib/containers/storage/overlay/7e0c0beb0c14d235eef3d38c4a7f046987795ff7837a98fae3e94adabe974121/diff:/var/lib/containers/storage/overlay/801976874339e860daa9cb235d0ad2224cc800bb63b4356407d634eb4a6bd560/diff:/var/lib/containers/storage/overlay/1e5d5ac74e37b2aad4c6ba6f932bd68aacf9ffd33e321a22d5909e19c618060b/diff:/var/lib/containers/storage/overlay/75654b8eeebd3beae97271a102f57cdeb794cc91e442648544963a7e951e9558/diff,upperdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/diff,workdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/work,redirect_dir=on,uuid=on,metacopy=on",
+     "2049 2042 0:127 /null /dev/null rw,nosuid - tmpfs tmpfs rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",size=65536k,mode=755,inode64",
+     "2050 2042 0:127 /random /dev/random rw,nosuid - tmpfs tmpfs rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",size=65536k,mode=755,inode64",
+     "2051 2042 0:127 /full /dev/full rw,nosuid - tmpfs tmpfs rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",size=65536k,mode=755,inode64",
+     "2052 2042 0:127 /tty /dev/tty rw,nosuid - tmpfs tmpfs rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",size=65536k,mode=755,inode64",
+     "2053 2042 0:127 /zero /dev/zero rw,nosuid - tmpfs tmpfs rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",size=65536k,mode=755,inode64",
+     "2054 2042 0:127 /urandom /dev/urandom rw,nosuid - tmpfs tmpfs rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",size=65536k,mode=755,inode64"
+    ]
+   }
+  },
+  {
+   "name": "host-path-write-test",
+   "data": [
+    {
+     "path": "/home/user/.local/share/buildkit",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/var/lib/buildkit",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/home/user/.local/share",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/home/user",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/proc/1/root/home/user/.local/share/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/1/root/var/lib/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/24/root/home/user/.local/share/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/24/root/var/lib/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/675/root/home/user/.local/share/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/675/root/var/lib/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/7/root/home/user/.local/share/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/7/root/var/lib/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/718/root/home/user/.local/share/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/718/root/var/lib/buildkit",
+     "statErrno": "EACCES"
+    },
+    {
+     "path": "/proc/730/root/home/user/.local/share/buildkit",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/proc/730/root/var/lib/buildkit",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/proc/736/root/home/user/.local/share/buildkit",
+     "statErrno": "ENOENT"
+    },
+    {
+     "path": "/proc/736/root/var/lib/buildkit",
+     "statErrno": "ENOENT"
+    }
+   ]
+  },
+  {
+   "name": "signal-reachability",
+   "data": [
+    {
+     "pid": 1,
+     "comm": "rootlesskit",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "1",
+      "NoNewPrivs": "0",
+      "Seccomp": "0"
+     },
+     "kill0": "signal-0-accepted"
+    },
+    {
+     "pid": 24,
+     "comm": "buildkitd",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "24",
+      "NoNewPrivs": "0",
+      "Seccomp": "0"
+     },
+     "kill0": "signal-0-accepted"
+    },
+    {
+     "pid": 675,
+     "comm": "buildctl",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "675",
+      "NoNewPrivs": "0",
+      "Seccomp": "0"
+     },
+     "kill0": "signal-0-accepted"
+    },
+    {
+     "pid": 7,
+     "comm": "exe",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "7",
+      "NoNewPrivs": "0",
+      "Seccomp": "0"
+     },
+     "kill0": "signal-0-accepted"
+    },
+    {
+     "pid": 718,
+     "comm": "buildkit-runc",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "718",
+      "NoNewPrivs": "0",
+      "Seccomp": "0"
+     },
+     "kill0": "signal-0-accepted"
+    },
+    {
+     "pid": 730,
+     "comm": "sh",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "730",
+      "NoNewPrivs": "0",
+      "Seccomp": "2"
+     },
+     "kill0": "signal-0-accepted"
+    },
+    {
+     "pid": 736,
+     "comm": "node",
+     "status": {
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "736",
+      "NoNewPrivs": "0",
+      "Seccomp": "2"
+     },
+     "kill0": "signal-0-accepted"
+    }
+   ]
+  },
+  {
+   "name": "yama-and-kernel-limits",
+   "data": {
+    "/proc/sys/kernel/yama/ptrace_scope": "0",
+    "/proc/sys/kernel/unprivileged_userns_clone": "ENOENT",
+    "/proc/sys/user/max_user_namespaces": "2147483647",
+    "/proc/sys/kernel/apparmor_restrict_unprivileged_userns": "ENOENT",
+    "osFacts": {
+     "type": "Linux",
+     "release": "7.2.15-300.fc45.x86_64",
+     "arch": "x64",
+     "machine": "x86_64"
+    }
+   }
+  },
+  {
+   "name": "version-token-scan",
+   "data": [
+    {
+     "pid": 1,
+     "f": "cmdline",
+     "hits": [
+      "buildkitd\u0000--debug\u0000--oci-worker-no-process-sandbo",
+      "buildkitd.sock\u0000"
+     ]
+    },
+    {
+     "pid": 24,
+     "f": "cmdline",
+     "hits": [
+      "buildkitd\u0000--debug\u0000--oci-worker-no-process-sandbo",
+      "buildkitd.sock\u0000"
+     ]
+    },
+    {
+     "pid": 675,
+     "f": "cmdline",
+     "hits": [
+      "buildkitd.sock\u0000build\u0000--local\u0000context=/tmp/dctx\u0000-"
+     ]
+    },
+    {
+     "pid": 7,
+     "f": "cmdline",
+     "hits": [
+      "buildkitd\u0000--debug\u0000--oci-worker-no-process-sandbo",
+      "buildkitd.sock\u0000"
+     ]
+    },
+    {
+     "pid": 718,
+     "f": "cmdline",
+     "hits": [
+      "buildkit-runc\u0000--log\u0000/home/user/.local/share/buil",
+      "buildkit/runc-overlayfs/executor/stwn970g733uysv"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "daemon-mountinfo-and-cgroup",
+   "data": [
+    {
+     "pid": 1,
+     "mountinfoCount": 14,
+     "mountinfoBuildkit": [
+      "1998 2001 0:47 /bkstate2 /home/user/.local/share/buildkit rw,nosuid,nodev - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    },
+    {
+     "pid": 24,
+     "mountinfoCount": 16,
+     "mountinfoBuildkit": [
+      "2012 1984 0:47 /bkstate2 /home/user/.local/share/buildkit rw,nosuid,nodev - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+      "2020 2012 0:124 / /home/user/.local/share/buildkit/runc-overlayfs/cachemounts/buildkit648754587 rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+      "2021 2012 0:124 / /home/user/.local/share/buildkit/runc-overlayfs/executor/stwn970g733uysvzi1vufju35/rootfs rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    },
+    {
+     "pid": 675,
+     "mountinfoCount": 14,
+     "mountinfoBuildkit": [
+      "1998 2001 0:47 /bkstate2 /home/user/.local/share/buildkit rw,nosuid,nodev - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    },
+    {
+     "pid": 7,
+     "mountinfoCount": 16,
+     "mountinfoBuildkit": [
+      "2012 1984 0:47 /bkstate2 /home/user/.local/share/buildkit rw,nosuid,nodev - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+      "2020 2012 0:124 / /home/user/.local/share/buildkit/runc-overlayfs/cachemounts/buildkit648754587 rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+      "2021 2012 0:124 / /home/user/.local/share/buildkit/runc-overlayfs/executor/stwn970g733uysvzi1vufju35/rootfs rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    },
+    {
+     "pid": 718,
+     "mountinfoCount": 16,
+     "mountinfoBuildkit": [
+      "2012 1984 0:47 /bkstate2 /home/user/.local/share/buildkit rw,nosuid,nodev - tmpfs tmpfs rw,seclabel,size=96552900k,nr_inodes=1048576,inode64,usrquota",
+      "2020 2012 0:124 / /home/user/.local/share/buildkit/runc-overlayfs/cachemounts/buildkit648754587 rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+      "2021 2012 0:124 / /home/user/.local/share/buildkit/runc-overlayfs/executor/stwn970g733uysvzi1vufju35/rootfs rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    },
+    {
+     "pid": 730,
+     "mountinfoCount": 15,
+     "mountinfoBuildkit": [
+      "2040 2022 0:124 / / rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+      "2048 2042 0:116 /run/user/1000/buildkit/otel-grpc.sock /dev/otel-grpc.sock ro,relatime - overlay overlay rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",lowerdir=/var/lib/containers/storage/overlay/327a3ee99ad327336188e9578e3a0957379aa32eb03b695f391025227ef9a642/diff:/var/lib/containers/storage/overlay/b9655edbe143213cb01150ded53fbbffba94034b847279dc03a3df6ece2baa61/diff:/var/lib/containers/storage/overlay/7e0c0beb0c14d235eef3d38c4a7f046987795ff7837a98fae3e94adabe974121/diff:/var/lib/containers/storage/overlay/801976874339e860daa9cb235d0ad2224cc800bb63b4356407d634eb4a6bd560/diff:/var/lib/containers/storage/overlay/1e5d5ac74e37b2aad4c6ba6f932bd68aacf9ffd33e321a22d5909e19c618060b/diff:/var/lib/containers/storage/overlay/75654b8eeebd3beae97271a102f57cdeb794cc91e442648544963a7e951e9558/diff,upperdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/diff,workdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/work,redirect_dir=on,uuid=on,metacopy=on"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    },
+    {
+     "pid": 736,
+     "mountinfoCount": 15,
+     "mountinfoBuildkit": [
+      "2040 2022 0:124 / / rw,relatime - overlay overlay rw,seclabel,lowerdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/34/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/33/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/32/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/31/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/30/fs:/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/29/fs,upperdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/fs,workdir=/home/user/.local/share/buildkit/runc-overlayfs/snapshots/snapshots/35/work,redirect_dir=nofollow,uuid=null",
+      "2048 2042 0:116 /run/user/1000/buildkit/otel-grpc.sock /dev/otel-grpc.sock ro,relatime - overlay overlay rw,context=\"system_u:object_r:container_file_t:s0:c1022,c1023\",lowerdir=/var/lib/containers/storage/overlay/327a3ee99ad327336188e9578e3a0957379aa32eb03b695f391025227ef9a642/diff:/var/lib/containers/storage/overlay/b9655edbe143213cb01150ded53fbbffba94034b847279dc03a3df6ece2baa61/diff:/var/lib/containers/storage/overlay/7e0c0beb0c14d235eef3d38c4a7f046987795ff7837a98fae3e94adabe974121/diff:/var/lib/containers/storage/overlay/801976874339e860daa9cb235d0ad2224cc800bb63b4356407d634eb4a6bd560/diff:/var/lib/containers/storage/overlay/1e5d5ac74e37b2aad4c6ba6f932bd68aacf9ffd33e321a22d5909e19c618060b/diff:/var/lib/containers/storage/overlay/75654b8eeebd3beae97271a102f57cdeb794cc91e442648544963a7e951e9558/diff,upperdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/diff,workdir=/var/lib/containers/storage/overlay/cc8df1ab16f0b5e9b9436c9a536bad1ff232b504b37fa3f4ad4bab6669853e07/work,redirect_dir=on,uuid=on,metacopy=on"
+     ],
+     "cgroup": [
+      "0::/"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "sandbox-egress",
+   "data": {
+    "tcpConnect": "ok"
+   }
+  }
+ ],
+ "errors": []
+}
